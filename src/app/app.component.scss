@@ -1,0 +1,38 @@
+.header{
+    height: 60px;
+    background-color: rgb(255, 115, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h2{
+    margin-left: 130px;
+}
+
+.links{
+    margin-right: 10px;
+}
+
+.links a{
+    text-decoration: none;
+    padding: 5px;
+    color: white;
+    transition: .5s;
+}
+
+.links a:hover{
+    color: rgba(0, 0, 0, 0.315);
+}
+
+.cartola-img{
+    height: 60px;
+}
+
+.team-link{
+    text-align: center;
+    border-top: 1px solid black;
+    padding-top: 4px;
+    font-size: 16px;
+}

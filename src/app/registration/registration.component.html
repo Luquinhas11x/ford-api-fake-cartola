@@ -1,0 +1,51 @@
+<div class="all-content">
+  <div class="click">
+    <button class="display-button" (click)="toggleData()">CRIE SEU JOGADOR   <i class="pi pi-spin pi-spinner"></i></button>
+  </div>
+  <div class="registration" *ngIf="toDisplay">  
+    <div class="registration-input">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"><i class="fa-solid fa-file-signature"></i></span>
+        <input type="text" pInputText placeholder="Nome do jogador..." [(ngModel)]="playerName">
+      </div>
+    </div>
+    <div class="registration-input">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"><i class="fa-solid fa-flag"></i></span>
+        <input type="text" pInputText placeholder="Time do jogador..." [(ngModel)]="playerTeam">
+      </div>
+    </div>
+    <div class="registration-input">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"><i class="fa-solid fa-earth-africa"></i></span>
+        <input type="text" pInputText placeholder="Nacionalidade do jogador..." [(ngModel)]="playerNationality">
+      </div>
+    </div>
+    <div class="registration-input">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"><i class="fa-solid fa-location-dot"></i></span>
+        <input type="text" pInputText placeholder="Posição do jogador..." [(ngModel)]="playerPosition">
+      </div>
+    </div>
+    <div class="registration-input">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"><i class="fa-solid fa-futbol"></i></span>
+        <input type="text" pInputText placeholder="Habilidade do jogador..." [(ngModel)]="playerHability">
+      </div>
+    </div>
+    <div class="registration-input">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"><i class="fa-solid fa-user"></i></span>
+        <input type="text" pInputText placeholder="Imagem do jogador..." [(ngModel)]="playerImg">
+      </div>
+    </div>
+    <div class="registration-input">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"><i class="fa-solid fa-user"></i></span>
+        <input type="text" pInputText placeholder="Imagem do time..." [(ngModel)]="playerTeamImg">
+      </div>
+    </div>
+    <button pButton type="button" label="add player" class="p-button-outlined" class="add-button"
+      (click)="create()"></button>
+  </div>
+</div>

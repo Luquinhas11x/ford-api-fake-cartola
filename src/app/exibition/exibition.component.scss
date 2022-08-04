@@ -1,0 +1,131 @@
+.player-card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 7px;
+    width: 75%;
+    padding: 8px;
+    margin: 20px 0px 5px 20px;
+    transition: .5s;
+}
+
+.player-card input{
+    border: none;
+    background-color: transparent;
+}
+
+.player-card:hover{
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.card-image{
+    height: 70px;
+    width: 70px;
+    border-radius: 7px;
+}
+
+
+.edit-button{
+    border: none;
+    background-color: transparent;
+    margin-right: 7px;
+    padding: 5px;
+    transition: .5s;
+}
+
+.edit-button:hover{
+    cursor: pointer;
+    background-color: rgba(218, 165, 32, 0.815);
+    border-radius: 7px;
+}
+
+.delet-button{
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    transition: .5s;
+}
+
+.delet-button:hover{
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.596);
+    border-radius: 7px;
+}
+
+.name-position{
+    display: flex;
+    flex-direction: column;
+}
+
+.player-name{
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.player-position{
+    color: rgba(0, 0, 0, 0.671);
+}
+
+.team-button{
+  font-size: 30px;
+  margin-top: 12px;
+  padding: 27px 20px 27px 20px;
+  border: none;
+  background-color: rgb(34, 177, 34);
+  border-radius: 7px;
+  transition: .5s;
+}
+
+.team-button:hover{
+    cursor: pointer;
+    box-shadow: 7px 5px 5px black;
+}
+
+.team-name-image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-image{
+    height: 40px;
+    width: 40px;
+}
+
+.team-name{
+    text-align: center;
+}
+
+.card-add{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.market-icon{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.transform-icon{
+    transition: .5s;
+}
+
+.transform-icon:hover{
+    cursor: pointer;
+    transform: rotateY(360deg);
+}
+
+.all-players{
+    margin-bottom: 20px;
+}
+

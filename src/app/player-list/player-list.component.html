@@ -1,0 +1,42 @@
+<div *ngFor="let player of players">
+  <div class="card-add" *ngIf="player.inMyTeam === status">
+    <div class="player-card">
+      <div class="team-name-image">
+        <img class="team-image" [src]="[player.teamImg]">
+        <input class="team-name" type="text" [ngModel]="player.team | inputs | uppercase" (ngModelChange)="player.team=$event"
+          [readonly]="player.readonly">
+      </div>
+      <img class="card-image" [src]="[player.img]">
+      <div class="name-position">
+        <input class="player-name" type="text" [ngModel]="player.name | firstUppercase"
+          (ngModelChange)="player.name=$event" [readonly]="player.readonly">
+        <input class="player-position" type="text" [ngModel]="player.position | firstUppercase"
+          (ngModelChange)="player.position=$event" [readonly]="player.readonly">
+      </div>
+      <input type="text" [ngModel]="player.nationality | firstUppercase" (ngModelChange)="player.nationality=$event"
+        [readonly]="player.readonly">
+      <input type="text" [ngModel]="player.hability | firstUppercase" (ngModelChange)="player.hability=$event"
+        [readonly]="player.readonly">
+      <div class="buttons">
+        <div class="p-buttonset">
+          <button class="edit-button" (click)="edit(player)">
+            <div *ngIf="player.readonly == true; else saveIcon"><i class="fa-solid fa-pencil"></i> editar</div>
+          </button>
+          <button class="delet-button" (click)="deletPlayer(player)">
+            <i class="fa-solid fa-trash"></i>
+            deletar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="player.inMyTeam == false">
+      <button class="team-button" (click)="inMyTeam(player)" pTooltip="Clique para adicionar no seu time">+</button>
+    </div>
+    <div *ngIf="player.inMyTeam == true">
+      <button class="market-button" (click)="inTheMarket(player)" pTooltip="Clique para mandar de volta ao mercado">X</button>
+    </div>
+  </div>
+</div>
+
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
+<ng-template #saveIcon><i class="fa-solid fa-check"></i> salvar</ng-template>
