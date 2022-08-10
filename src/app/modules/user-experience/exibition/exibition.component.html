@@ -2,7 +2,7 @@
   <i class="fa-solid fa-magnifying-glass-dollar transform-icon"></i>
 </div>
 <div class="all-players">
-  <app-player-list [players]="players" [status]="false" ></app-player-list>
+  <app-player-list [players]="players" (editionPlayer)="newPlayer($event)" [status]="false" ></app-player-list>
 </div>
 
 <router-outlet></router-outlet>

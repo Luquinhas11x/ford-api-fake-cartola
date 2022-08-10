@@ -1,0 +1,213 @@
+.player-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 7px;
+  padding: 8px;
+  margin: 20px 0px 5px 20px;
+  transition: .5s;
+}
+
+.player-card input {
+  border: none;
+  background-color: transparent;
+}
+
+.player-card:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.card-image {
+  height: 70px;
+  width: 70px;
+  border-radius: 7px;
+}
+
+
+.edit-button {
+  border: none;
+  background-color: transparent;
+  margin-right: 7px;
+  padding: 5px;
+  transition: .5s;
+}
+
+.edit-button:hover {
+  cursor: pointer;
+  background-color: rgba(218, 165, 32, 0.815);
+  border-radius: 7px;
+}
+
+.delet-button {
+  border: none;
+  background-color: transparent;
+  padding: 5px;
+  transition: .5s;
+}
+
+.delet-button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.596);
+  border-radius: 7px;
+}
+
+.name-position {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3px;
+}
+
+.player-name {
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.player-position {
+  color: rgba(0, 0, 0, 0.671);
+}
+
+.team-button {
+  font-size: 30px;
+  margin-top: 12px;
+  padding: 27px 20px 27px 20px;
+  border: none;
+  background-color: rgb(34, 177, 34);
+  border-radius: 7px;
+  transition: .5s;
+}
+
+.team-button:hover {
+  cursor: pointer;
+  box-shadow: 7px 5px 5px black;
+}
+
+.market-button {
+  font-size: 30px;
+  margin-top: 12px;
+  padding: 27px 20px 27px 20px;
+  border: none;
+  background-color: red;
+  border-radius: 7px;
+  transition: .5s;
+}
+
+.market-button:hover {
+  cursor: pointer;
+  box-shadow: 7px 5px 5px black;
+}
+
+.team-name-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-image {
+  height: 40px;
+  width: 40px;
+}
+
+.team-name {
+  text-align: center;
+}
+
+.card-add {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.market-icon {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+}
+
+.transform-icon {
+  transition: .5s;
+}
+
+.transform-icon:hover {
+  cursor: pointer;
+  transform: rotateY(360deg);
+}
+
+.p-m-0 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.p-m-0 input {
+  border: none;
+  padding: 6px;
+}
+
+.p-m-0 input:hover{
+  border: none;
+  border-bottom: 1px dotted black;
+  background-color: rgba(128, 128, 128, 0.11);
+}
+
+
+.dialog-image {
+  height: 150px;
+  width: 150px;
+  border-radius: 7px;
+}
+
+.dialog-Teamimage {
+  height: 60px;
+  width: 60px;
+}
+
+.dialog-name {
+  text-align: center;
+}
+
+.dialog-position {
+  text-align: center;
+}
+
+.dialog-nationality {
+  text-align: center;
+}
+
+.dialog-hability {
+  text-align: center;
+}
+
+.p-button-text{
+  margin-right: 85px;
+}
+
+.cancel-button{
+  margin-right: 15px;
+}
+
+
+.first-inputs{
+  border-top: 1px solid black;
+  padding-top: 10px;
+}
+
+.all-inputs{
+  margin-top: 10px;
+}
+
+.images{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}

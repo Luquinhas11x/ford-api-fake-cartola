@@ -1,0 +1,79 @@
+<p-messages [value]="msgs" [style]="{width: '30%'}"></p-messages>
+<div *ngFor="let player of players">
+  <div class="card-add" *ngIf="player.inMyTeam === status">
+    <div class="player-card">
+      <div class="team-name-image">
+        <img class="team-image" [src]="[player.teamImg]">
+        <input class="team-name" [ngModel]="player.team | inputs | uppercase" (ngModelChange)="player.team=$event">
+      </div>
+      <img class="card-image" [src]="[player.img]">
+      <div class="name-position">
+        <input class="player-name" type="text" [ngModel]="player.name | firstUppercase"
+          (ngModelChange)="player.name=$event" [readonly]="true">
+        <input class="player-position" type="text" [ngModel]="player.position | firstUppercase"
+          (ngModelChange)="player.position=$event" [readonly]="true">
+      </div>
+      <input type="text" [ngModel]="player.nationality | firstUppercase" (ngModelChange)="player.nationality=$event"
+        [readonly]="true">
+      <input type="text" [ngModel]="player.hability | firstUppercase" (ngModelChange)="player.hability=$event"
+        [readonly]="true">
+      <div class="buttons">
+        <div class="p-buttonset">
+          <button class="edit-button">
+            <div (click)="showModalDialog(player)" icon="pi pi-external-link" label="Show"><i
+                class="fa-solid fa-pencil"></i> editar</div>
+          </button>
+          <button class="delet-button" (click)="deletPlayer(player)">
+            <i class="fa-solid fa-trash"></i>
+            deletar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="player.inMyTeam == false">
+      <button class="team-button" (click)="inMyTeam(player)" pTooltip="Clique para adicionar no seu time">+</button>
+    </div>
+    <div *ngIf="player.inMyTeam == true">
+      <button class="market-button" (click)="inTheMarket(player)"
+        pTooltip="Clique para mandar de volta ao mercado">X</button>
+    </div>
+
+  </div>
+</div>
+
+<p-confirmDialog [transitionOptions]="'300ms'" [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
+
+<p-dialog [transitionOptions]="'300ms'" header="Hora de editar!" [(visible)]="displayModal" [modal]="true"
+  [draggable]="false" [resizable]="false">
+  <div class="p-m-0" *ngIf="editing">
+    <div class="images">
+      <img class="dialog-image" [src]="[editing.img]">
+      <img class="dialog-Teamimage" [src]="[editing.teamImg]">
+    </div>
+    <div class="all-inputs">
+      <div class="first-inputs">
+        <input class="dialog-name" type="text" [ngModel]="editing.name | firstUppercase"
+        (ngModelChange)="editing.name=$event" [readonly]="editing.readonly">
+        <input class="dialog-name" type="text" [ngModel]="editing.team | inputs | uppercase"
+          (ngModelChange)="editing.team=$event" [readonly]="editing.readonly">
+      </div>
+      <div>
+        <input class="dialog-position" type="text" [ngModel]="editing.position | firstUppercase"
+          (ngModelChange)="editing.position=$event" [readonly]="editing.readonly">
+        <input class="dialog-nationality" type="text" [ngModel]="editing.nationality | firstUppercase"
+          (ngModelChange)="editing.nationality=$event" [readonly]="editing.readonly">
+      </div>
+      <div>
+        <input class="dialog-hability" type="text" [ngModel]="editing.hability | firstUppercase"
+          (ngModelChange)="editing.hability=$event" [readonly]="editing.readonly">
+        <input type="text" [(ngModel)]="editing.teamImg">
+      </div>
+    </div>
+  </div>
+  <ng-template class="dialog-footer" pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="displayModal=false; edit(editing); newEdition(editing)" label="salvar" class="p-button-text">
+    </p-button>
+    <p-button icon="pi pi-times" (click)="displayModal=false; backToTrue()" label="cancelar" class="cancel-button">
+    </p-button>
+  </ng-template>
+</p-dialog>

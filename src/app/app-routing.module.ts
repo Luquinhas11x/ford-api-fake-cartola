@@ -1,31 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ExibitionComponent } from './exibition/exibition.component';
-import { HomeComponent } from './home/home.component';
-import { MyTeamComponent } from './my-team/my-team.component';
-import { RegistrationComponent } from './registration/registration.component';
-
-
-
+import { ExibitionComponent } from './modules/user-experience/exibition/exibition.component';
 
 
 
 const routes: Routes = [
   {
-    path: 'exibition',
-    component: ExibitionComponent
-  },
-  {
     path: 'home',
-    component: HomeComponent
+    loadChildren: () => import('./modules/home-page/home-page.module').then(m => m.HomePageModule)
   },
   {
     path: 'registration',
-    component: RegistrationComponent
+    loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
   },
   {
-    path: 'my-team',
-    component: MyTeamComponent
+    path: 'user',
+    loadChildren: () => import('./modules/user-experience/user-experience.module').then(m => m.UserExperienceModule)
   },
   {
     path: '',

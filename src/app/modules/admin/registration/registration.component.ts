@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PlayerService } from '../core/services/player.service';
-import { playerCard } from '../core/models/player';
+import { PlayerService } from '../../../core/services/player.service';
+import { playerCard } from '../../../core/models/player';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-registration',
@@ -42,7 +43,7 @@ export class RegistrationComponent implements OnInit {
     }
     this.service.addPlayer(player).subscribe()
     this.players.push(player)
-    this.route.navigate(['/exibition'])
+    this.route.navigate(['/user/market'])
   }
 
   toggleData() {
