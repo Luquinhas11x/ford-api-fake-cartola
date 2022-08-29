@@ -1,6 +1,6 @@
-export interface playerCard{
+export interface playerCard {
     id: number;
-    teamImg: string
+    teamImg: string;
     team: string;
     img: string;
     name: string;

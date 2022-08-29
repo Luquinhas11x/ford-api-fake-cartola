@@ -35,7 +35,8 @@ import { RippleModule } from 'primeng/ripple';
     ConfirmDialogModule,
     BrowserAnimationsModule,
     TooltipModule,
-    RippleModule
+    RippleModule,
+    
   ],
   exports: [],
   bootstrap: [AppComponent]

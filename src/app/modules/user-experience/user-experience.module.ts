@@ -20,6 +20,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import {MessageModule} from 'primeng/message';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [MyTeamComponent, InputsPipe, FirstUppercasePipe, ExibitionComponent, PlayerListComponent],
@@ -34,6 +35,7 @@ import { BrowserModule } from '@angular/platform-browser';
     MessagesModule,
     DialogModule,
     MessageModule,
+    ToastModule
   ],
   providers: [MessageService, ConfirmationService]
 })

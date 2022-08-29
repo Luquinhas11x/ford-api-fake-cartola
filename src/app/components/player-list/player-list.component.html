@@ -1,4 +1,5 @@
-<p-messages [value]="msgs" [style]="{width: '30%'}"></p-messages>
+<p-toast></p-toast>
+
 <div *ngFor="let player of players">
   <div class="card-add" *ngIf="player.inMyTeam === status">
     <div class="player-card">
@@ -28,7 +29,7 @@
             deletar
           </button>
         </div>
-      </div>
+      </div>  
     </div>
     <div *ngIf="player.inMyTeam == false">
       <button class="team-button" (click)="inMyTeam(player)" pTooltip="Clique para adicionar no seu time">+</button>
@@ -40,6 +41,8 @@
 
   </div>
 </div>
+
+<p-messages [value]="msgs" [style]="{width: '30%'}"></p-messages>
 
 <p-confirmDialog [transitionOptions]="'300ms'" [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
 

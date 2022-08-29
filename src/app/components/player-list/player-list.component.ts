@@ -55,8 +55,8 @@ export class PlayerListComponent implements OnInit {
 
 
   edit(editedCar: playerCard): void {
-    // editedCar.readonly = false;
-    this.service.uptadePlayer(editedCar, editedCar.id).subscribe();
+    this.service.uptadePlayer(editedCar, editedCar.id).subscribe(
+      player => this.players[this.players.findIndex(beforEditingPlayer => beforEditingPlayer.id === player.id)] = player);
     this.messageService.add({ severity: 'success', summary: 'Confirmado', detail: 'Informações atualizadas' });
   }
 
@@ -104,19 +104,11 @@ export class PlayerListComponent implements OnInit {
 
   showModalDialog(dialogPlayer: playerCard) {
     this.displayModal = true;
-    this.editing = dialogPlayer;
+    this.editing = { ...dialogPlayer };
   }
 
-  newEdition(value: playerCard){
+  newEdition(value: playerCard) {
     this.editionPlayer.emit(value)
     console.log(value)
   }
 }
-
-// accept: () => {
-//   this.messageService.add({ severity: 'success', summary: 'Deletado', detail: 'Jogador deletado' });
-//   this.delet(player);
-// },
-// reject: () => {
-//   this.messageService.add({ severity: 'error', summary: 'Cancelado', detail: 'Você cancelou' });
-// }
